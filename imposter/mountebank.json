@@ -1,0 +1,49 @@
+{
+  "imposters": [
+    {
+      "port": 4546,
+      "protocol": "http",
+      "name": "QuintaAzenhaServicosExternos",
+      "stubs": [
+        {
+          "predicates": [
+            {
+              "matches": {
+                "method": "GET",
+                "path": "/disponibilidade/.*"
+              }
+            }
+          ],
+          "responses": [
+            {
+              "is": {
+                "statusCode": 200,
+                "headers": { "Content-Type": "application/json" },
+                "body": "{\"disponivel\": true, \"proximaData\": \"2026-05-20\", \"vagasRestantes\": 8, \"fonte\": \"sistema-reservas-mock\"}"
+              }
+            }
+          ]
+        },
+        {
+          "predicates": [
+            {
+              "matches": {
+                "method": "POST",
+                "path": "/pagamentos"
+              }
+            }
+          ],
+          "responses": [
+            {
+              "is": {
+                "statusCode": 200,
+                "headers": { "Content-Type": "application/json" },
+                "body": "{\"transacaoId\": \"QA-TXN-2025-001\", \"estado\": \"aprovado\", \"mensagem\": \"Pagamento da reserva processado com sucesso.\", \"fonte\": \"gateway-pagamentos-mock\"}"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

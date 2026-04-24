@@ -1,0 +1,427 @@
+{
+  "info": {
+    "name": "Quinta da Azenha API - UC00605",
+    "description": "Coleção de testes para o Projeto Final UC00605 - API REST Quinta da Azenha",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5169/api",
+      "type": "string"
+    },
+    {
+      "key": "authToken",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Vinhos",
+      "item": [
+        {
+          "name": "GET /vinhos - Listar todos",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vinhos"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function() { pm.expect(pm.response.status).to.eql(200); });",
+                  "pm.test(\"Retorna array de vinhos\", function() { var jsonData = pm.response.json(); pm.expect(Array.isArray(jsonData)).to.be.true; });",
+                  "pm.test(\"Tem 5 vinhos\", function() { var jsonData = pm.response.json(); pm.expect(jsonData.length).to.eql(5); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /vinhos/{id} - Por ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vinhos/1"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.test(\"Status 200\", function() { pm.expect(pm.response.status).to.eql(200); });", "pm.test(\"Retorna vinho com ID 1\", function() { var jsonData = pm.response.json(); pm.expect(jsonData.id).to.eql(1); });"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /vinhos/destaque - Em destaque",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vinhos/destaque"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.test(\"Status 200\", function() { pm.expect(pm.response.status).to.eql(200); });", "pm.test(\"Vinho em destaque\", function() { var jsonData = pm.response.json(); pm.expect(jsonData.destaque).to.be.true; });"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /vinhos/tipo/{tipo} - Filtrar por tipo",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vinhos/tipo/Branco"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.test(\"Status 200\", function() { pm.expect(pm.response.status).to.eql(200); });", "pm.test(\"Retorna vinhos Brancos\", function() { var jsonData = pm.response.json(); jsonData.forEach(function(v) { pm.expect(v.tipo).to.eql(\"Branco\"); }); });"]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2. Experiências",
+      "item": [
+        {
+          "name": "GET /experiencias - Listar ativas",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/experiencias"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function() { pm.expect(pm.response.status).to.eql(200); });",
+                  "pm.test(\"Retorna 4 experiências\", function() { var jsonData = pm.response.json(); pm.expect(jsonData.length).to.eql(4); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /experiencias/{id} - Por ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/experiencias/1"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.test(\"Status 200\", function() { pm.expect(pm.response.status).to.eql(200); });", "pm.test(\"Retorna Prova de Arinto\", function() { var jsonData = pm.response.json(); pm.expect(jsonData.nome).to.eql(\"Prova de Arinto\"); });"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "POST /experiencias - Criar (requer auth)",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/experiencias",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Nova Experiência Teste\",\n  \"descricao\": \"Experiência de teste\",\n  \"preco\": 50.00,\n  \"duracaoMinutos\": 120,\n  \"lotacaoMaxima\": 10,\n  \"epoca\": null,\n  \"imagem\": \"teste.png\",\n  \"ativa\": true\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.test(\"Status 201 ou 401\", function() { pm.expect([201, 401]).to.include(pm.response.status); });"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "DELETE /experiencias/{id} - Desativar (requer auth)",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/experiencias/99",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.test(\"Status 204 ou 401/404\", function() { pm.expect([204, 401, 404]).to.include(pm.response.status); });"]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3. Reservas",
+      "item": [
+        {
+          "name": "POST /reservas - Criar reserva (público)",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/reservas",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@exemplo.pt\",\n  \"telefone\": \"912345678\",\n  \"assunto\": \"Prova de Arinto\",\n  \"dataPretendida\": \"2026-05-20T10:00:00Z\",\n  \"numeroPessoas\": 2,\n  \"mensagem\": \"Gostaria de fazer uma reserva para prova de vinho.\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 201\", function() { pm.expect(pm.response.status).to.eql(201); });",
+                  "pm.test(\"Retorna reserva com disponibilidade\", function() { var jsonData = pm.response.json(); pm.expect(jsonData.reserva).to.be.ok; pm.expect(jsonData.disponibilidade).to.be.ok; });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /reservas - Listar (requer auth)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/reservas",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.test(\"Status 200 ou 401\", function() { pm.expect([200, 401]).to.include(pm.response.status); });"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET /reservas/{id} - Por ID (requer auth)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/reservas/1",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.test(\"Status 200 ou 401/404\", function() { pm.expect([200, 401, 404]).to.include(pm.response.status); });"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "PUT /reservas/{id}/estado - Atualizar estado (requer auth)",
+          "request": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/reservas/1/estado",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "\"Confirmada\""
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.test(\"Status 200 ou 401/404/400\", function() { pm.expect([200, 401, 404, 400]).to.include(pm.response.status); });"]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4. Autenticação",
+      "item": [
+        {
+          "name": "POST /auth/register - Registar admin",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/register",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@quintaazenha.pt\",\n  \"password\": \"Admin123!\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.test(\"Status 201 ou 409 (já existe)\", function() { pm.expect([201, 409]).to.include(pm.response.status); });"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "POST /auth/login - Login",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/login",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@quintaazenha.pt\",\n  \"password\": \"Admin123!\"\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function() { pm.expect(pm.response.status).to.eql(200); });",
+                  "pm.test(\"Retorna token JWT\", function() { var jsonData = pm.response.json(); pm.expect(jsonData.token).to.be.ok; pm.collectionVariables.set(\"authToken\", jsonData.token); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5. Vinhos Admin (requer auth)",
+      "item": [
+        {
+          "name": "POST /vinhos - Criar vinho",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/vinhos",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Novo Vinho Teste\",\n  \"descricao\": \"Vinho de teste para validação da API\",\n  \"tipo\": \"Branco\",\n  \"casta\": \"Arinto 100%\",\n  \"ano\": 2024,\n  \"alcool\": 13.0,\n  \"imagem\": \"novo.png\",\n  \"harmonizacao\": \"Peixe grelhado\",\n  \"docura\": 20,\n  \"acidez\": 80,\n  \"corpo\": 70,\n  \"destaque\": false\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.test(\"Status 201 ou 401\", function() { pm.expect([201, 401]).to.include(pm.response.status); });"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "PUT /vinhos/{id} - Atualizar",
+          "request": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/vinhos/1",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Grande Reserva Vinhas Velhas\",\n  \"descricao\": \"Nascido nas vinhas mais velhas. Estagio de 12 meses em barrica.\",\n  \"tipo\": \"Branco\",\n  \"casta\": \"Arinto 100%\",\n  \"ano\": 2021,\n  \"alcool\": 13.5,\n  \"imagem\": \"QtaAzenhaGrdReserva.png\",\n  \"harmonizacao\": \"Peixe grelhado, Marisco\",\n  \"docura\": 20,\n  \"acidez\": 85,\n  \"corpo\": 75,\n  \"destaque\": false\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.test(\"Status 200 ou 401/404\", function() { pm.expect([200, 401, 404]).to.include(pm.response.status); });"]
+              }
+            }
+          ]
+        },
+        {
+          "name": "DELETE /vinhos/{id} - Eliminar",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/vinhos/99",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{authToken}}" }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": ["pm.test(\"Status 204 ou 401/404\", function() { pm.expect([204, 401, 404]).to.include(pm.response.status); });"]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "6. Serviços Externos (Mountebank)",
+      "item": [
+        {
+          "name": "GET /external/disponibilidade/{tipo} - Verificar disponibilidade",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/external/disponibilidade/Prova%20de%20Arinto"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function() { pm.expect(pm.response.status).to.eql(200); });",
+                  "pm.test(\"Retorna JSON com disponibilidade\", function() { var jsonData = pm.response.json(); pm.expect(jsonData.disponivel).to.be.ok; });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "POST /external/pagamento - Processar pagamento",
+          "request": {
+            "method": "POST",
+            "url": "{{baseUrl}}/external/pagamento",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"valor\": 50.00\n}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status 200\", function() { pm.expect(pm.response.status).to.eql(200); });",
+                  "pm.test(\"Retorna transação aprovada\", function() { var jsonData = pm.response.json(); pm.expect(jsonData.estado).to.eql(\"aprovado\"); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

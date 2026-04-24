@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: ApiDarioJoanaProjetoFinal/Dockerfile
+    ports:
+      - "5169:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=QuintaAzenhaDB605;User Id=sa;Password=QuintaAzenha2026!;TrustServerCertificate=True;
+      - JwtSettings__Key=ChaveSecretaQuintaAzenha2025Maisde32Caracteres!
+      - JwtSettings__Issuer=ApiQuintaAzenha
+      - JwtSettings__Audience=QuintaAzenhaClients
+      - JwtSettings__DurationInMinutes=60
+      - Redis__ConnectionString=redis:6379
+      - ImpostorUrl=http://mountebank:4546
+    depends_on:
+      - sqlserver
+      - redis
+      - mountebank
+    networks:
+      - quintazenha
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=QuintaAzenha2026!
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - quintazenha
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    networks:
+      - quintazenha
+
+  mountebank:
+    image: bbyars/mountebank:latest
+    ports:
+      - "2525:2525"
+      - "4546:4546"
+    volumes:
+      - ./imposter:/imposter-config
+    command: --configfile /imposter-config/mountebank.json --allowInjection
+    networks:
+      - quintazenha
+
+networks:
+  quintazenha:
+    driver: bridge
+
+volumes:
+  sqlserver_data:
+  redis_data:

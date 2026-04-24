@@ -1,0 +1,292 @@
+[
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiDarioJoanaProjetoFinal.Models.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ApiDarioJoanaProjetoFinal.Models.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.ExperienciasController",
+    "Method": "GetAll",
+    "RelativePath": "api/Experiencias",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.ExperienciasController",
+    "Method": "Create",
+    "RelativePath": "api/Experiencias",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "exp",
+        "Type": "ApiDarioJoanaProjetoFinal.Models.Experiencia",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.ExperienciasController",
+    "Method": "GetById",
+    "RelativePath": "api/Experiencias/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.ExperienciasController",
+    "Method": "Delete",
+    "RelativePath": "api/Experiencias/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.ExternalController",
+    "Method": "Disponibilidade",
+    "RelativePath": "api/External/disponibilidade/{tipo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.ExternalController",
+    "Method": "Pagamento",
+    "RelativePath": "api/External/pagamento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "ApiDarioJoanaProjetoFinal.Controllers.PagamentoRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.ReservasController",
+    "Method": "Create",
+    "RelativePath": "api/Reservas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reserva",
+        "Type": "ApiDarioJoanaProjetoFinal.Models.Reserva",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.ReservasController",
+    "Method": "GetAll",
+    "RelativePath": "api/Reservas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.ReservasController",
+    "Method": "GetById",
+    "RelativePath": "api/Reservas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.ReservasController",
+    "Method": "UpdateEstado",
+    "RelativePath": "api/Reservas/{id}/estado",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "estado",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.VinhosController",
+    "Method": "GetAll",
+    "RelativePath": "api/Vinhos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.VinhosController",
+    "Method": "Create",
+    "RelativePath": "api/Vinhos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "vinho",
+        "Type": "ApiDarioJoanaProjetoFinal.Models.Vinho",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.VinhosController",
+    "Method": "GetById",
+    "RelativePath": "api/Vinhos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.VinhosController",
+    "Method": "Update",
+    "RelativePath": "api/Vinhos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "vinho",
+        "Type": "ApiDarioJoanaProjetoFinal.Models.Vinho",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.VinhosController",
+    "Method": "Delete",
+    "RelativePath": "api/Vinhos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.VinhosController",
+    "Method": "GetDestaque",
+    "RelativePath": "api/Vinhos/destaque",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiDarioJoanaProjetoFinal.Controllers.VinhosController",
+    "Method": "GetByTipo",
+    "RelativePath": "api/Vinhos/tipo/{tipo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

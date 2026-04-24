@@ -1,0 +1,137 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|c:\\users\\gnpch\\desktop\\dev\\teste projecto final_uc605\\api\\apidariojoanaprojetofinal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|solutionrelative:apidariojoanaprojetofinal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|c:\\users\\gnpch\\desktop\\dev\\teste projecto final_uc605\\api\\apidariojoanaprojetofinal\\controllers\\experienciascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|solutionrelative:apidariojoanaprojetofinal\\controllers\\experienciascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|c:\\users\\gnpch\\desktop\\dev\\teste projecto final_uc605\\api\\apidariojoanaprojetofinal\\controllers\\vinhoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|solutionrelative:apidariojoanaprojetofinal\\controllers\\vinhoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|c:\\users\\gnpch\\desktop\\dev\\teste projecto final_uc605\\api\\apidariojoanaprojetofinal\\models\\experiencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|solutionrelative:apidariojoanaprojetofinal\\models\\experiencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|c:\\users\\gnpch\\desktop\\dev\\teste projecto final_uc605\\api\\apidariojoanaprojetofinal\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|solutionrelative:apidariojoanaprojetofinal\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|c:\\users\\gnpch\\desktop\\dev\\teste projecto final_uc605\\api\\apidariojoanaprojetofinal\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|solutionrelative:apidariojoanaprojetofinal\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|c:\\users\\gnpch\\desktop\\dev\\teste projecto final_uc605\\api\\apidariojoanaprojetofinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E6E0895-7525-4D1B-95C0-C6F3D2E52057}|ApiDarioJoanaProjetoFinal\\ApiDarioJoanaProjetoFinal.csproj|solutionrelative:apidariojoanaprojetofinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\appsettings.json",
+              "RelativeDocumentMoniker": "ApiDarioJoanaProjetoFinal\\appsettings.json",
+              "ToolTip": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\appsettings.json",
+              "RelativeToolTip": "ApiDarioJoanaProjetoFinal\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-20T18:37:46.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ExperienciasController.cs",
+              "DocumentMoniker": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\Controllers\\ExperienciasController.cs",
+              "RelativeDocumentMoniker": "ApiDarioJoanaProjetoFinal\\Controllers\\ExperienciasController.cs",
+              "ToolTip": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\Controllers\\ExperienciasController.cs",
+              "RelativeToolTip": "ApiDarioJoanaProjetoFinal\\Controllers\\ExperienciasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:34:10.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VinhosController.cs",
+              "DocumentMoniker": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\Controllers\\VinhosController.cs",
+              "RelativeDocumentMoniker": "ApiDarioJoanaProjetoFinal\\Controllers\\VinhosController.cs",
+              "ToolTip": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\Controllers\\VinhosController.cs",
+              "RelativeToolTip": "ApiDarioJoanaProjetoFinal\\Controllers\\VinhosController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:33:47.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Experiencia.cs",
+              "DocumentMoniker": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\Models\\Experiencia.cs",
+              "RelativeDocumentMoniker": "ApiDarioJoanaProjetoFinal\\Models\\Experiencia.cs",
+              "ToolTip": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\Models\\Experiencia.cs",
+              "RelativeToolTip": "ApiDarioJoanaProjetoFinal\\Models\\Experiencia.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:28:43.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "ApiDarioJoanaProjetoFinal\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "ApiDarioJoanaProjetoFinal\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAqwCMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:22:15.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\Models\\User.cs",
+              "RelativeDocumentMoniker": "ApiDarioJoanaProjetoFinal\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\Models\\User.cs",
+              "RelativeToolTip": "ApiDarioJoanaProjetoFinal\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:21:50.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\Program.cs",
+              "RelativeDocumentMoniker": "ApiDarioJoanaProjetoFinal\\Program.cs",
+              "ToolTip": "C:\\Users\\gnpch\\Desktop\\DEV\\TESTE Projecto final_UC605\\api\\ApiDarioJoanaProjetoFinal\\Program.cs",
+              "RelativeToolTip": "ApiDarioJoanaProjetoFinal\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T18:11:44.323Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
