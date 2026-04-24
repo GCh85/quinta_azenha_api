@@ -65,41 +65,41 @@ API REST desenvolvida em ASP.NET Core 8 para a **Quinta da Azenha**, produtora d
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                        FRONTEND (UC00604)                                    │
-│                   Website Quinta da Azenha                                   │
-│                  HTML + Bootstrap + JavaScript                               │
+│                        FRONTEND (UC00604)                                   │
+│                   Website Quinta da Azenha                                  │
+│                  HTML + Bootstrap + JavaScript                              │
 └───────────────────────────────────┬─────────────────────────────────────────┘
                                     │ HTTP/JSON
                                     ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         API REST (.NET 8)                                    │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐       │
-│  │ Controllers │  │  Services   │  │    Cache    │  │  Security   │       │
-│  │             │  │             │  │             │  │             │       │
-│  │ • Vinhos    │  │ Impostor    │  │ L1: Memory  │  │ JWT Bearer  │       │
-│  │ • Experien. │  │ Service     │  │ L2: Redis   │  │ BCrypt      │       │
-│  │ • Reservas  │  │             │  │             │  │             │       │
-│  │ • Auth      │  │             │  │             │  │             │       │
-│  │ • External  │  │             │  │             │  │             │       │
-│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘       │
-│                                                                              │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                         │
-│  │   Models    │  │   Data      │  │   Polly     │                         │
-│  │   (DTOs)    │  │ DbContext   │  │ Resilience │                         │
-│  └─────────────┘  └─────────────┘  └─────────────┘                         │
+│                         API REST (.NET 8)                                   │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │
+│  │ Controllers │  │  Services   │  │    Cache    │  │  Security   │         │
+│  │             │  │             │  │             │  │             │         │
+│  │ • Vinhos    │  │ Impostor    │  │ L1: Memory  │  │ JWT Bearer  │         │
+│  │ • Experien. │  │ Service     │  │ L2: Redis   │  │ BCrypt      │         │
+│  │ • Reservas  │  │             │  │             │  │             │         │
+│  │ • Auth      │  │             │  │             │  │             │         │
+│  │ • External  │  │             │  │             │  │             │         │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘         │
+│                                                                             │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                          │
+│  │   Models    │  │   Data      │  │   Polly     │                          │
+│  │   (DTOs)    │  │ DbContext   │  │ Resilience  │                          │
+│  └─────────────┘  └─────────────┘  └─────────────┘                          │
 └───────────────────────────────┬─────────────────────────────────────────────┘
                                 │
             ┌───────────────────┼───────────────────┐
             ▼                   ▼                   ▼
-    ┌───────────────┐   ┌───────────────┐   ┌───────────────┐
-    │  SQL Server   │   │    Redis      │   │  Mountebank   │
-    │   (Dados)     │   │  (Cache L2)   │   │  (Imposter)   │
-    │               │   │               │   │               │
-    │ • Users       │   │ • vinhos:*    │   │ /disponibilidade
-    │ • Vinhos      │   │ • experien:*  │   │ /pagamentos   │
-    │ • Experiencias│   │               │   │               │
-    │ • Reservas    │   │               │   │               │
-    └───────────────┘   └───────────────┘   └───────────────┘
+    ┌───────────────┐   ┌───────────────┐   ┌─────────────────┐
+    │  SQL Server   │   │    Redis      │   │  Mountebank     │
+    │   (Dados)     │   │  (Cache L2)   │   │  (Imposter)     │
+    │               │   │               │   │                 │
+    │ • Users       │   │ • vinhos:*    │   │ /disponibilidade│
+    │ • Vinhos      │   │ • experien:*  │   │ /pagamentos     │
+    │ • Experiencias│   │               │   │                 │
+    │ • Reservas    │   │               │   │                 │
+    └───────────────┘   └───────────────┘   └─────────────────┘
 ```
 
 ---
@@ -293,7 +293,7 @@ Editar `appsettings.json`:
 
 ### Swagger
 
-Aceder a `http://localhost:5169/swagger` para测试ar os endpoints interativamente.
+Aceder a `http://localhost:5169/swagger`
 
 1. **Registar utilizador:** `POST /api/auth/register`
 2. **Fazer login:** `POST /api/auth/login` → copiar token
@@ -505,19 +505,6 @@ Request → Retry (3x) → Se falhar todas:
 ## 📄 Licença
 
 Projeto académico desenvolvido para a **UC00605 - Desenvolvimento Web Avançado**.
-
----
-
-## 👥 Autores
-
-- **Dario Quental** - [@darioquental](https://github.com/darioquental)
-- **Joana** - [GitHub]
-
----
-
-## 📞 Suporte
-
-Para questões ou sugestões, criar uma [Issue](https://github.com/teu-usuario/api-dariojoana-projeto-final/issues).
 
 ---
 
