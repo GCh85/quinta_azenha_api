@@ -510,7 +510,7 @@ Projeto académico desenvolvido para a **UC00605 - Desenvolvimento Web Avançado
 
 <div align="center">
 
-**Made with ❤️ for UC00605**
+**Made with ❤️ by GCh85 for UC00605**
 
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=flat&logo=bootstrap)](https://getbootstrap.com/)
 [![Swagger](https://img.shields.io/badge/Swagger-OpenAPI-85EA2D?style=flat&logo=swagger)](https://swagger.io/)
